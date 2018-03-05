@@ -1,5 +1,8 @@
 # featuremill
 
+
+[![Build Status](https://travis-ci.org/dustin-decker/featuremill.svg?branch=master)](https://travis-ci.org/dustin-decker/featuremill)
+
 Featuremill is a general-purpose fast, stateless, and deterministic feature extractor writting in golang for use in machine learning.
 
 The text feature extractor makes heavy use of a hashing vectorizer in order to rapidly generate features with very low overhead. Hash vectorizing does not require storing any state and is deterministic so it has these advantages:
