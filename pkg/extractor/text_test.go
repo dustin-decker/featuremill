@@ -10,13 +10,15 @@ func TestText(t *testing.T) {
 
 	text := "testing some shit"
 
-	expected := []uint32{
-		uint32(164984899),
-		uint32(650894796),
-		uint32(232538530),
+	expected := []string{
+		"164984899:1",
+		"650894796:1",
+		"232538530:1",
 	}
 
 	got := TransformText(text)
 
-	cmp.Equal(expected, got)
+	if diff := cmp.Diff(expected, got); diff != "" {
+		t.Errorf("unexpected difference: (-got +want)\n%s", diff)
+	}
 }
