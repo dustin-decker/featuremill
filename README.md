@@ -12,7 +12,7 @@ The advantages do not come without a cost, though. Featuremill cannot apply tran
 
 ## Output format
 
-[libsvm <index_number><value>](https://stats.stackexchange.com/questions/61328/libsvm-data-format)
+[libsvm format](https://stats.stackexchange.com/questions/61328/libsvm-data-format) (`<index_number>:<value>`)
 A slice of them, if the feature generates multiple vectors (text, time).
 This format makes this library easy to use along with [hector](https://github.com/xlvector/hector)
 
