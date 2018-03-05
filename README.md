@@ -8,7 +8,7 @@ The text feature extractor makes heavy use of a hashing vectorizer in order to r
 - can easily be scaled horizontally - requires no stored state, so no coordination required
 - features can be added at a later date - features are determinitstically generated
 
-The advantages do not come without a cost, though. Featuremill cannot apply transformations such as Inverse Document Frequency (IDF), which can be helpful to discount the impact of common features. If this has significant impact on prediction with your ML algorithm or dataset, consider adding that support or use different tooling or approach.
+The advantages do not come without a cost, though. Featuremill cannot apply transformations such as Inverse Document Frequency (IDF) to text features, which can be helpful to discount the impact of common text features. If this has significant impact on prediction with your ML algorithm or dataset, consider adding that support or use different tooling or approach. Other optimizations, such as number scaling can be done if you're able to provide some basic metrics on your number data from your datastore, such as the maximum.
 
 ## Output format
 
