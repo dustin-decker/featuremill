@@ -20,11 +20,11 @@ func TransformDate(field, date string) ([]string, error) {
 
 	dayOfWeek := int(dt.Weekday())
 	dayOfWeekFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "dayOfWeek"))
-	out = append(out, fmt.Sprintf("%d:%d", dayOfWeekFeatureID, dayOfWeek/6))
+	out = append(out, fmt.Sprintf("%d:%f", dayOfWeekFeatureID, float32(dayOfWeek)/6))
 
 	monthOfYear := dt.Month()
 	monthOfYearFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "monthOfYear"))
-	out = append(out, fmt.Sprintf("%d:%d", monthOfYearFeatureID, monthOfYear/12))
+	out = append(out, fmt.Sprintf("%d:%f", monthOfYearFeatureID, float32(monthOfYear)/12))
 
 	return out, nil
 }
