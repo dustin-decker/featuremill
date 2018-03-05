@@ -2,6 +2,12 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/araddon/dateparse"
+  packages = ["."]
+  revision = "ffccba6ba2a60949120f25db8949a79dd31abeb2"
+
+[[projects]]
   name = "github.com/google/go-cmp"
   packages = [
     "cmp",
@@ -21,6 +27,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "14c8f5781b2fd730730263ad349bf9393a036333ea02ef50f7f5e60761802ec4"
+  inputs-digest = "904ce03078641f87b4d65d2b53a7fc6eee63096afd45ac1f85349a5f6699e6d1"
   solver-name = "gps-cdcl"
   solver-version = 1
