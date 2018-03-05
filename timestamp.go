@@ -20,15 +20,15 @@ func TransformTimestamp(field, timestamp string) ([]string, error) {
 
 	dayOfWeek := int(dt.Weekday())
 	dayOfWeekFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "dayOfWeek"))
-	out = append(out, fmt.Sprintf("%d:%d", dayOfWeekFeatureID, dayOfWeek/6))
+	out = append(out, fmt.Sprintf("%d:%f", dayOfWeekFeatureID, float32(dayOfWeek)/6))
 
 	hourOfDay := dt.Hour()
 	hourOfDayFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "hourOfDay"))
-	out = append(out, fmt.Sprintf(" %d:%d", hourOfDayFeatureID, hourOfDay/23))
+	out = append(out, fmt.Sprintf("%d:%f", hourOfDayFeatureID, float32(hourOfDay)/23))
 
 	minuteOfHour := dt.Minute()
 	minuteOfHourFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "minuteOfHour"))
-	out = append(out, fmt.Sprintf(" %d:%d", minuteOfHourFeatureID, minuteOfHour/59))
+	out = append(out, fmt.Sprintf("%d:%f", minuteOfHourFeatureID, float32(minuteOfHour)/59))
 
 	return out, nil
 }
