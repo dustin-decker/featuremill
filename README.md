@@ -23,7 +23,8 @@ This format makes this library easy to use along with [hector](https://github.co
 
 ## TODO supported data
 
-- time - represeneted as 3 seasonality vectors - minute of hour, hour of day, day of week
+- time - represeneted as 3 seasonality vectors: minute of hour, hour of day, day of week
+- date - represented as 1 categorical vector: year, and 2 seasonality vectors: day of week, and month of year.
 - boolean - 0/1
 - numeric - gets scaled
 - categorical - like text, but not tokenized at all
