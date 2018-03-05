@@ -21,10 +21,10 @@ This format makes this library easy to use along with [hector](https://github.co
 - IP - gets converted to integer representation
 - text - tokenized by word using hashing vectorizer
 - timestamp - represeneted as 3 seasonality vectors: minute of hour, hour of day, day of week
+- date - represented as 2 seasonality vectors: day of week, and month of year
 - numerical - gets scaled
 
 ## TODO supported data
 
-- date - represented as 1 categorical vector: year, and 2 seasonality vectors: day of week, and month of year.
 - boolean - 0/1
 - categorical - like text, but not tokenized at all
