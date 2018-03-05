@@ -26,6 +26,6 @@ This format makes this library easy to use along with [hector](https://github.co
 - timestamp - represeneted as 3 seasonality vectors: minute of hour, hour of day, day of week
 - date - represented as 2 seasonality vectors: day of week, and month of year
 - text - tokenized by word using hashing vectorizer
-- numerical - gets scaled
+- numerical - min/max rescaler
 - boolean - represented as 0 or 1
 - categorical - like text, but not tokenized at all
