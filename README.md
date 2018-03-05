@@ -18,11 +18,12 @@ This format makes this library easy to use along with [hector](https://github.co
 
 ## Supported data
 
-- IP (gets converted to integer representation)
-- text (tokenized by word using hashing vectorizer)
+- IP - gets converted to integer representation
+- text - tokenized by word using hashing vectorizer
 
 ## TODO supported data
 
-- time (represeneted as 3 seasonality vectors - minute of hour, hour of day, day of week)
-- boolean (0/1)
-- numbers (gets scaled)
+- time - represeneted as 3 seasonality vectors - minute of hour, hour of day, day of week
+- boolean - 0/1
+- numeric - gets scaled
+- categorical - like text, but not tokenized at all
