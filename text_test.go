@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func TestText(t *testing.T) {
+func TestTransformText(t *testing.T) {
 
 	text := "testing some shit"
 
