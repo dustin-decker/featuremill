@@ -10,20 +10,21 @@ import (
 )
 
 // TransformDate returns as 2 seasonality vectors: day of week, and month of year
-func TransformDate(field, date string) (string, error) {
+func TransformDate(field, date string) ([]string, error) {
+	var out []string
 
 	dt, err := dateparse.ParseAny(date)
 	if err != nil {
-		return "", err
+		return out, err
 	}
 
 	dayOfWeek := int(dt.Weekday())
 	dayOfWeekFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "dayOfWeek"))
-	out := fmt.Sprintf("%d:%d", dayOfWeekFeatureID, dayOfWeek/6)
+	out = append(out, fmt.Sprintf("%d:%d", dayOfWeekFeatureID, dayOfWeek/6))
 
 	monthOfYear := dt.Month()
 	monthOfYearFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "monthOfYear"))
-	out += fmt.Sprintf(" %d:%d", monthOfYearFeatureID, monthOfYear/12)
+	out = append(out, fmt.Sprintf("%d:%d", monthOfYearFeatureID, monthOfYear/12))
 
 	return out, nil
 }

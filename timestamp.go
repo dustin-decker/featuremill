@@ -10,24 +10,25 @@ import (
 )
 
 // TransformTimestamp returns as 3 seasonality vectors: minute of hour, hour of day, day of week
-func TransformTimestamp(field, timestamp string) (string, error) {
+func TransformTimestamp(field, timestamp string) ([]string, error) {
+	var out []string
 
 	dt, err := dateparse.ParseAny(timestamp)
 	if err != nil {
-		return "", err
+		return out, err
 	}
 
 	dayOfWeek := int(dt.Weekday())
 	dayOfWeekFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "dayOfWeek"))
-	out := fmt.Sprintf("%d:%d", dayOfWeekFeatureID, dayOfWeek/6)
+	out = append(out, fmt.Sprintf("%d:%d", dayOfWeekFeatureID, dayOfWeek/6))
 
 	hourOfDay := dt.Hour()
 	hourOfDayFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "hourOfDay"))
-	out += fmt.Sprintf(" %d:%d", hourOfDayFeatureID, hourOfDay/23)
+	out = append(out, fmt.Sprintf(" %d:%d", hourOfDayFeatureID, hourOfDay/23))
 
 	minuteOfHour := dt.Minute()
 	minuteOfHourFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "minuteOfHour"))
-	out += fmt.Sprintf(" %d:%d", minuteOfHourFeatureID, minuteOfHour/59)
+	out = append(out, fmt.Sprintf(" %d:%d", minuteOfHourFeatureID, minuteOfHour/59))
 
 	return out, nil
 }
