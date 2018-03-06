@@ -15,8 +15,9 @@ func TransformText(text string) []string {
 		// feature id per word
 		// this works okay for sparse technical logs
 		// otherwise you might want to use an IDF transformation
-		i := murmur3.Sum32([]byte(v))
-		features = append(features, fmt.Sprintf("%d:1", i))
+		// to under-weight less meaningfull words/tokens
+		fID := murmur3.Sum32([]byte(v))
+		features = append(features, fmt.Sprintf("%d:1", fID))
 	}
 
 	return features
