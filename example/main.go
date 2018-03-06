@@ -25,5 +25,4 @@ func main() {
 	sample := "0 " + strings.Join(features, " ")
 
 	fmt.Println(sample)
-
 }

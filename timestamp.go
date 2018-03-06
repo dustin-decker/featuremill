@@ -19,15 +19,15 @@ func ExtractTimestamp(field, timestamp string) ([]string, error) {
 	}
 
 	dayOfWeek := int(dt.Weekday())
-	dayOfWeekFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "dayOfWeek"))
+	dayOfWeekFeatureID := int32(murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "dayOfWeek")))
 	out = append(out, fmt.Sprintf("%d:%f", dayOfWeekFeatureID, float32(dayOfWeek)/6))
 
 	hourOfDay := dt.Hour()
-	hourOfDayFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "hourOfDay"))
+	hourOfDayFeatureID := int32(murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "hourOfDay")))
 	out = append(out, fmt.Sprintf("%d:%f", hourOfDayFeatureID, float32(hourOfDay)/23))
 
 	minuteOfHour := dt.Minute()
-	minuteOfHourFeatureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "minuteOfHour"))
+	minuteOfHourFeatureID := int32(murmur3.Sum32([]byte(uniqueHashPrefixStr + field + "minuteOfHour")))
 	out = append(out, fmt.Sprintf("%d:%f", minuteOfHourFeatureID, float32(minuteOfHour)/59))
 
 	return out, nil

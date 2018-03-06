@@ -8,7 +8,7 @@ import (
 
 func TestExtractCategorical(t *testing.T) {
 
-	expected := "2633207889:1"
+	expected := "-1661759407:1"
 
 	got := ExtractCategorical("username or something", "sodunn")
 

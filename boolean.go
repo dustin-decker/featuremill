@@ -11,7 +11,7 @@ import (
 func ExtractBoolean(field, boolean string) (string, error) {
 
 	// deterministic collision resistant feature id
-	featureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field))
+	featureID := int32(murmur3.Sum32([]byte(uniqueHashPrefixStr + field)))
 
 	if boolean == "false" ||
 		boolean == "False" ||
