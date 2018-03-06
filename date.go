@@ -9,7 +9,7 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// ExtractDate returns a slice of 2 seasonality vectors: day of week, and month of year
+// ExtractDate returns a slice of 2 scaled seasonality vectors: day of week, and month of year
 // each with a deterministic feature id
 func ExtractDate(field, date string) ([]string, error) {
 	var out []string
