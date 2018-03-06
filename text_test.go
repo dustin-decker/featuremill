@@ -16,7 +16,7 @@ func TestTransformText(t *testing.T) {
 		"232538530:1",
 	}
 
-	got := TransformText(text)
+	got := TransformText(text, " ")
 
 	if diff := cmp.Diff(expected, got); diff != "" {
 		t.Errorf("unexpected difference: (-got +want)\n%s", diff)

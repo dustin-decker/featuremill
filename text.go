@@ -7,10 +7,10 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformText returns word vector indices via hashing vectorizer
-func TransformText(text string) []string {
+// TransformText returns a slice of "featureID:1" strings for each token in the string
+func TransformText(text, delim string) []string {
 	features := []string{}
-	texts := strings.Split(text, " ")
+	texts := strings.Split(text, delim)
 	for _, v := range texts {
 		// feature id per word
 		// this works okay for sparse technical logs
