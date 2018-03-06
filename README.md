@@ -43,5 +43,6 @@ For each incoming sample being processed, I `append` the returned string or expa
 To assemble the final sample in libsvm format, just join it with the sample label:
 
 ``` go
+sort.Strings(features)
 sample := "0 " + strings.Join(features, " ")
 ```
