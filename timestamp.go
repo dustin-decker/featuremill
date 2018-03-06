@@ -9,7 +9,7 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformTimestamp returns as 3 seasonality vectors: minute of hour, hour of day, day of week
+// TransformTimestamp returns a slice of 3 seasonality vectors: minute of hour, hour of day, day of week
 func TransformTimestamp(field, timestamp string) ([]string, error) {
 	var out []string
 

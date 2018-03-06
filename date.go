@@ -9,7 +9,8 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformDate returns as 2 seasonality vectors: day of week, and month of year
+// TransformDate returns a slice of 2 seasonality vectors: day of week, and month of year
+// for the deterministic feature ID
 func TransformDate(field, date string) ([]string, error) {
 	var out []string
 

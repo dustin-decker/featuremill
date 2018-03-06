@@ -7,7 +7,7 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformBoolean returns integer representation of IPv4 and IPv6 IPs
+// TransformBoolean returns a 0/1 vector for the deterministic feature id
 func TransformBoolean(field, boolean string) (string, error) {
 
 	// deterministic collision resistant feature id

@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/dustin-decker/featuremill.svg?branch=master)](https://travis-ci.org/dustin-decker/featuremill)
 
-## [godocs documentation](https://godoc.org/github.com/dustin-decker/featuremill)
-
 Featuremill is a general-purpose fast, stateless, and deterministic feature extractor writting in golang for use in machine learning.
 
 The text feature extractor makes heavy use of a hashing vectorizer in order to rapidly generate features with very low overhead. Hash vectorizing does not require storing any state and is deterministic so it has these advantages:
@@ -30,3 +28,21 @@ This format makes this library easy to use along with [hector](https://github.co
 - numerical - min/max rescaler
 - boolean - represented as 0 or 1
 - categorical - like text, but not tokenized at all
+
+## Documentation
+
+[godocs](https://godoc.org/github.com/dustin-decker/featuremill)
+
+Look at the tests for example usage, as well.
+
+### how I use featuremill
+
+For each incoming sample being processed, I `append` the returned string or slice to a `features` slice.
+To assemble the final sample in libsvm format, you can do a simple looped string concatenation like so:
+
+``` go
+sample := "0 " // in libsvm format, first digit is the category
+for _, v := range(features) {
+    sample += v
+}
+```
