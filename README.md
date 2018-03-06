@@ -1,7 +1,8 @@
 # featuremill
 
-
 [![Build Status](https://travis-ci.org/dustin-decker/featuremill.svg?branch=master)](https://travis-ci.org/dustin-decker/featuremill)
+
+## [godocs documentation](https://godoc.org/github.com/dustin-decker/featuremill)
 
 Featuremill is a general-purpose fast, stateless, and deterministic feature extractor writting in golang for use in machine learning.
 
