@@ -6,9 +6,9 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformCategorical returns a vector that is a positive boolean for a
+// ExtractCategorical returns a vector that is a positive boolean for a
 // deterministic categorical feature ID
-func TransformCategorical(field, category string) string {
+func ExtractCategorical(field, category string) string {
 	featureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field + category))
 	return fmt.Sprintf("%d:%d", featureID, 1)
 }

@@ -7,8 +7,8 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformBoolean returns a 0/1 vector for the deterministic feature id
-func TransformBoolean(field, boolean string) (string, error) {
+// ExtractBoolean returns a 0/1 vector for the deterministic feature id
+func ExtractBoolean(field, boolean string) (string, error) {
 
 	// deterministic collision resistant feature id
 	featureID := murmur3.Sum32([]byte(uniqueHashPrefixStr + field))

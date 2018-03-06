@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func TestTransformTimestamp(t *testing.T) {
+func TestExtractTimestamp(t *testing.T) {
 
 	text := "2018-03-05T03:12:14"
 
@@ -16,7 +16,7 @@ func TestTransformTimestamp(t *testing.T) {
 		"3355844277:0.203390",
 	}
 
-	got, _ := TransformTimestamp("@timestamp", text)
+	got, _ := ExtractTimestamp("@timestamp", text)
 
 	if diff := cmp.Diff(expected, got); diff != "" {
 		t.Errorf("unexpected difference: (-got +want)\n%s", diff)

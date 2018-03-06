@@ -9,8 +9,8 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformTimestamp returns a slice of 3 seasonality vectors: minute of hour, hour of day, day of week
-func TransformTimestamp(field, timestamp string) ([]string, error) {
+// ExtractTimestamp returns a slice of 3 seasonality vectors: minute of hour, hour of day, day of week
+func ExtractTimestamp(field, timestamp string) ([]string, error) {
 	var out []string
 
 	dt, err := dateparse.ParseAny(timestamp)

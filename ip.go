@@ -9,9 +9,9 @@ import (
 	"github.com/spaolacci/murmur3"
 )
 
-// TransformIP returns a vector that is a scaled integer representation of IPv4 and IPv6 IPs
+// ExtractIP returns a vector that is a scaled integer representation of IPv4 and IPv6 IPs
 // with a deterministic feature ID
-func TransformIP(field, addr string) (string, error) {
+func ExtractIP(field, addr string) (string, error) {
 	ip := net.ParseIP(addr)
 	if ip != nil {
 		if len(ip) == 16 {

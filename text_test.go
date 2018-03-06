@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func TestTransformText(t *testing.T) {
+func TestExtractText(t *testing.T) {
 
 	text := "testing some shit"
 
@@ -16,7 +16,7 @@ func TestTransformText(t *testing.T) {
 		"232538530:1",
 	}
 
-	got := TransformText(text, " ")
+	got := ExtractText(text, " ")
 
 	if diff := cmp.Diff(expected, got); diff != "" {
 		t.Errorf("unexpected difference: (-got +want)\n%s", diff)

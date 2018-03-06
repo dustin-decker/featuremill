@@ -35,7 +35,7 @@ This format makes this library easy to use along with [hector](https://github.co
 
 [godocs](https://godoc.org/github.com/dustin-decker/featuremill)
 
-Look at the tests for example usage, as well.
+Look at the [included example](example/main.go) and look at the tests for example usage, as well.
 
 ### how I use featuremill
 
