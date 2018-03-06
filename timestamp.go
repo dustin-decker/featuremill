@@ -10,6 +10,7 @@ import (
 )
 
 // ExtractTimestamp returns a slice of 3 seasonality vectors: minute of hour, hour of day, day of week
+// each with a deterministic feature ID
 func ExtractTimestamp(field, timestamp string) ([]string, error) {
 	var out []string
 

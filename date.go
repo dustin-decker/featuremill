@@ -10,7 +10,7 @@ import (
 )
 
 // ExtractDate returns a slice of 2 seasonality vectors: day of week, and month of year
-// for the deterministic feature ID
+// each with a deterministic feature id
 func ExtractDate(field, date string) ([]string, error) {
 	var out []string
 
