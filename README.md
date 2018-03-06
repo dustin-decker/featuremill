@@ -31,6 +31,8 @@ This format makes this library easy to use along with [hector](https://github.co
 
 ## Documentation
 
+### godocs and tests
+
 [godocs](https://godoc.org/github.com/dustin-decker/featuremill)
 
 Look at the tests for example usage, as well.
