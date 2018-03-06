@@ -31,13 +31,13 @@ This format makes this library easy to use along with [hector](https://github.co
 
 ## Documentation
 
-### godocs and tests
+### Godocs and tests
 
 [godocs](https://godoc.org/github.com/dustin-decker/featuremill)
 
 Look at the [included example](example/main.go) and look at the tests for example usage, as well.
 
-### how I use featuremill
+### How I use featuremill
 
 For each incoming sample being processed, I `append` the returned string or expanded slice to a `features` slice.
 To assemble the final sample in libsvm format, just join it with the sample label:
