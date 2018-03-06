@@ -40,7 +40,7 @@ Look at the [included example](example/main.go) and look at the tests for exampl
 ### How I use featuremill
 
 For each incoming sample being processed, I `append` the returned string or expanded slice to a `features` slice.
-To assemble the final sample in libsvm format, just join it with the sample label:
+To assemble the final sample in libsvm format, just sort and join it with the sample label:
 
 ``` go
 sort.Strings(features)
