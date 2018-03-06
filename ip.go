@@ -1,4 +1,4 @@
-package extractor
+package featuremill
 
 import (
 	"encoding/binary"

@@ -1,4 +1,4 @@
-package extractor
+package featuremill
 
 const (
 	// this is used for stateless and determinitstic feature id
