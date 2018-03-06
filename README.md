@@ -39,12 +39,9 @@ Look at the [included example](example/main.go) and look at the tests for exampl
 
 ### how I use featuremill
 
-For each incoming sample being processed, I `append` the returned string or slice to a `features` slice.
-To assemble the final sample in libsvm format, you can do a simple looped string concatenation like so:
+For each incoming sample being processed, I `append` the returned string or expanded slice to a `features` slice.
+To assemble the final sample in libsvm format, just join it with the sample label:
 
 ``` go
-sample := "0 " // in libsvm format, first digit is the category
-for _, v := range(features) {
-    sample += v
-}
+sample := "0 " + strings.Join(features, " ")
 ```
